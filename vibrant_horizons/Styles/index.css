@@ -1,0 +1,327 @@
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    position: relative;
+    min-height: 470px;
+    display: flex;
+    align-items: center;
+    background-color: #9faed5;
+    background-image: linear-gradient(90deg, rgba(244,219,234,.42), rgba(231,211,237,.03));
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 75px 0 110px;
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem,4.5vw,4.6rem);
+    line-height: 1.12;
+    max-width: 700px;
+    margin: 0 0 20px;
+}
+
+.hero p { max-width: 520px; color: #263653; font-weight: 650; }
+.hero .actions { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
+.hero .btn-outline { background: #ffffff80; }
+
+.hero-affirmation {
+    position: absolute;
+    right: 9%;
+    top: 45%;
+    color: white;
+    text-align: center;
+    font: italic 1.45rem/1.5 cursive;
+    text-shadow: 0 2px 9px #26365399;
+    transform: rotate(-5deg);
+}
+
+.hero-affirmation span,
+.belonging-message span {
+    display: block;
+    font-size: 2rem;
+}
+
+
+/* ========================================
+   PATHWAY CARDS
+======================================== */
+
+.pathways { background: #ede5f7; padding: 0 0 35px; }
+
+.pathway-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    transform: translateY(-22px);
+}
+
+.pathway {
+    position: relative;
+    display: flex;
+    gap: 14px;
+    min-height: 180px;
+    padding: 25px 18px 38px;
+    border-radius: 19px;
+    box-shadow: 0 12px 22px #26365318;
+    transition: transform .2s;
+}
+
+.pathway:hover { transform: translateY(-7px); }
+
+.pathway.pink { background: #f6cbe0; }
+.pathway.blue { background: #c8def8; }
+.pathway.purple { background: #dccaf0; }
+.pathway.mint { background: #c1e8df; }
+
+.pathway-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+    background: #ffffff77;
+    border-radius: 50%;
+    font-size: 2.4rem;
+    color: #b64d88;
+}
+
+.blue .pathway-icon { color: #488fce; }
+.purple .pathway-icon { color: #8d60bc; }
+.mint .pathway-icon { color: #2e9e8f; }
+
+.pathway h2 { font-size: 1.2rem; margin: 5px 0 8px; }
+.pathway p { font-size: .82rem; line-height: 1.55; color: #485776; margin: 0; }
+
+.pathway-arrow {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    background: #9866b7;
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+}
+
+
+/* ========================================
+   ABOUT / BELONGING SECTION
+======================================== */
+
+.belonging-feature {
+    background: #f1e8f6;
+    padding: 40px 0 55px;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.belonging-visual {
+    min-height: 275px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #91a4cc;
+    background-color: #93a5cd;
+}
+
+.belonging-message {
+    text-align: center;
+    color: white;
+    font: italic 1.55rem/1.5 cursive;
+    text-shadow: 0 2px 9px #26365399;
+    transform: rotate(-5deg);
+}
+
+.belonging-text h2 { font-size: clamp(2rem,2.7vw,3rem); margin: 12px 0; }
+.belonging-text p { font-size: .95rem; color: #53617b; }
+.belonging-text .btn { margin-top: 10px; }
+
+
+/* ========================================
+   CLOSING CALL TO ACTION
+======================================== */
+
+.closing-cta {
+    background: linear-gradient(100deg,#c8dcfa,#edc9e7,#d4d0f5);
+    padding: 32px 0;
+    text-align: center;
+}
+
+.closing-cta h2 { margin: 0 0 4px; }
+.closing-cta p { margin: 0 0 14px; }
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1000px) {
+    .pathway-grid { grid-template-columns: repeat(2,1fr); }
+    .about-layout { gap: 25px; }
+}
+
+@media (max-width: 680px) {
+    .hero {
+        min-height: 550px;
+        background-image: linear-gradient(90deg,#f4dbeaDD,#e7d3ed77),none;
+    }
+
+    .hero-content { padding: 55px 0 130px; }
+    .hero-affirmation { top: auto; bottom: 20px; font-size: 1rem; }
+    .pathway-grid { gap: 12px; }
+    .pathway { min-height: 195px; padding: 17px 13px 38px; display: block; }
+    .pathway-icon { margin-bottom: 10px; }
+    .about-layout { grid-template-columns: 1fr; }
+    .belonging-visual { min-height: 250px; }
+}
+
+@media (max-width: 390px) {
+    .pathway-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ========================================
+   HOMEPAGE DESIGN OVERRIDES
+======================================== */
+
+/* Hide affirmation overlays */
+.hero-affirmation,
+.belonging-message {
+    display: none !important;
+}
+
+.hero {
+    min-height: 390px;
+    background-image: linear-gradient(90deg,rgba(248,225,241,.36),rgba(248,225,241,.02) 68%),none;
+    background-position: center 52%;
+}
+
+.hero-content { padding: 52px 0 78px; }
+
+.hero h1 {
+    font-size: clamp(2.75rem,4.1vw,4.05rem);
+    line-height: 1.12;
+    max-width: 610px;
+    margin-bottom: 14px;
+}
+
+.hero p { font-size: .93rem; line-height: 1.6; max-width: 485px; }
+.hero .actions { margin-top: 18px; }
+
+.pathways { background: #f0e9f8; padding-bottom: 17px; }
+.pathway-grid { transform: translateY(-17px); gap: 24px; }
+.pathway { min-height: 160px; border-radius: 18px; padding: 22px 17px 36px; }
+
+.pathway.pink { background: #f7d7e8; }
+.pathway.blue { background: #d4e2fc; }
+.pathway.purple { background: #e4d6f5; }
+.pathway.mint { background: #ccece6; }
+
+.belonging-feature { background: #f5eef9; padding: 29px 0 34px; }
+.belonging-visual { min-height: 240px; }
+
+.closing-cta {
+    padding: 20px 0 23px;
+    background: linear-gradient(110deg,#d1dafa,#f3d5ec 49%,#c9dafa);
+}
+
+.closing-cta h2 { font-size: 1.75rem; }
+
+@media (max-width: 680px) {
+    .hero {
+        min-height: 440px;
+        background-image: linear-gradient(90deg,#f4dbeaac,#e7d3ed55),none;
+    }
+
+    .hero-content { padding: 58px 0 65px; }
+    .pathway-grid { transform: translateY(-10px); }
+    .pathway { min-height: 175px; }
+    .belonging-visual { min-height: 220px; }
+}
+
+
+/* ========================================
+   HTML IMAGE SUPPORT
+   Images are set in HTML, not CSS
+======================================== */
+
+/* Hero Image */
+.hero {
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,rgba(244,218,234,.48),rgba(244,218,234,.03));
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* About Image */
+.belonging-visual {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.belonging-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Closing Section Image */
+.closing-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.closing-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.closing-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #d8c8ed44;
+    z-index: -1;
+}
